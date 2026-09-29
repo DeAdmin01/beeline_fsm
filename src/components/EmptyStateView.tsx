@@ -5,13 +5,12 @@ import { Upload, FileText, Database, Sparkles, Calendar, Clock, MapPin, CheckCir
 interface EmptyStateViewProps {
   onFilesSelected: (files: FileList | File[]) => void;
   onTextPasted: (text: string, areaName: string) => void;
-  onLoadDemoData: () => void;
+  onLoadDemoData?: () => void;
 }
 
 export const EmptyStateView: React.FC<EmptyStateViewProps> = ({
   onFilesSelected,
-  onTextPasted,
-  onLoadDemoData
+  onTextPasted
 }) => {
   const [isDragging, setIsDragging] = useState(false);
   const [showPasteArea, setShowPasteArea] = useState(false);
@@ -185,20 +184,6 @@ export const EmptyStateView: React.FC<EmptyStateViewProps> = ({
             </div>
           </div>
         )}
-
-        {/* Кнопка быстрой загрузки тестового демонстрационного набора */}
-        <div className="d-flex justify-content-center mb-4">
-          <Button
-            variant="outline-secondary"
-            size="sm"
-            onClick={onLoadDemoData}
-            className="d-flex align-items-center gap-2 py-2 px-3"
-            style={{ fontSize: "0.84rem", borderColor: "var(--border-color)" }}
-          >
-            <Sparkles size={16} className="text-warning" />
-            <span>Загрузить тестовый демонстрационный набор (3 сектора Москвы)</span>
-          </Button>
-        </div>
 
         {/* Карточки ключевых возможностей платформы */}
         <Row className="g-3">
