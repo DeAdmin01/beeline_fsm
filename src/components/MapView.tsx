@@ -524,7 +524,7 @@ export const MapView: React.FC<MapViewProps> = ({
   return (
     <div
       className="fsm-card position-relative overflow-hidden"
-      style={{ height: "calc(100vh - 145px)", minHeight: "540px" }}
+      style={{ height: "calc(100vh - 175px)", minHeight: "480px" }}
     >
       {/* Верхняя панель фильтрации по бригадам над картой */}
       <div

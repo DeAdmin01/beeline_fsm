@@ -485,7 +485,7 @@ export const App: React.FC = () => {
       />
 
       {/* Основная рабочая область вкладок */}
-      <main className="flex-grow-1 p-3">
+      <main className="flex-grow-1 p-3" style={{ paddingBottom: "54px" }}>
         {/* Заглушка, если на выбранную дату отсутствуют наряды или доступные бригады */}
         {!activePlan ? (
           <div className="text-center p-5 fsm-card my-4">
@@ -568,12 +568,19 @@ export const App: React.FC = () => {
         )}
       </main>
 
-      {/* Нижняя статусная панель приложения */}
+      {/* Нижняя статусная панель приложения (закреплена внизу экрана) */}
       <footer
-        className="py-2 px-3 small text-theme-muted d-flex flex-wrap justify-content-between align-items-center gap-2"
+        className="fsm-footer py-2 px-3 small text-theme-muted d-flex flex-wrap justify-content-between align-items-center gap-2"
         style={{
+          position: "fixed",
+          bottom: 0,
+          left: 0,
+          right: 0,
+          width: "100%",
+          zIndex: 1030,
           background: "var(--bg-surface)",
-          borderTop: "1px solid var(--border-color)"
+          borderTop: "1px solid var(--border-color)",
+          boxShadow: "0 -2px 10px rgba(0, 0, 0, 0.25)"
         }}
       >
         <div className="d-flex align-items-center gap-2">
